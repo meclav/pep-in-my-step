@@ -1,0 +1,11 @@
+[Unit]
+Description=rentsy
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/app/pep/pep.pl prefork -m production -l http://*:80
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
